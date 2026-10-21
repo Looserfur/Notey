@@ -1,0 +1,57 @@
+{
+  "expo": {
+    "name": "Speak Notes",
+    "slug": "speak-notes",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "speaknotes",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.speaknotes.app",
+      "infoPlist": {
+        "NSSpeechRecognitionUsageDescription": "Speak Notes turns your speech into text so you can save study notes.",
+        "NSMicrophoneUsageDescription": "Speak Notes uses the microphone so your words can appear as text while you talk."
+      }
+    },
+    "android": {
+      "package": "com.speaknotes.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#f4f7f6",
+        "foregroundImage": "./assets/images/android-icon-foreground.png",
+        "backgroundImage": "./assets/images/android-icon-background.png",
+        "monochromeImage": "./assets/images/android-icon-monochrome.png"
+      },
+      "permissions": ["RECORD_AUDIO"],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-secure-store",
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Speak Notes uses the microphone so your words can appear as text while you talk.",
+          "speechRecognitionPermission": "Speak Notes turns your speech into text so you can save study notes."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "resizeMode": "contain",
+          "backgroundColor": "#f4f7f6"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}
